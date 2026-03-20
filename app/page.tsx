@@ -22,24 +22,31 @@ export default function Home() {
       <section className="mx-auto flex min-h-screen max-w-7xl items-center px-6 py-20 sm:px-8 lg:px-12">
         <div className="grid w-full gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200 shadow-[0_0_30px_rgba(56,189,248,0.12)] backdrop-blur">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/8 bg-white/[0.04] px-4 py-2 text-sm text-slate-300/80 shadow-[0_0_24px_rgba(56,189,248,0.08)] backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-cyan-400" />
               Idea generation powered by AI
             </div>
 
-            <h1 className="mt-8 text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
-              Generate startup ideas in seconds using AI
+            <h1 className="mt-8 max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+              <span className="block">Generate startup ideas</span>
+              <span className="block">in seconds using AI</span>
             </h1>
 
-            <p className="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+            <p className="mt-6 max-w-md text-base leading-8 text-slate-300 sm:text-lg">
               Stop overthinking. Discover validated business ideas tailored to your interests.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <button className="inline-flex items-center justify-center rounded-2xl bg-cyan-400 px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-[0_12px_40px_rgba(34,211,238,0.28)] transition hover:bg-cyan-300">
+              <button
+                className="inline-flex items-center justify-center rounded-2xl bg-cyan-400 px-7 py-4 text-base font-semibold text-slate-950 shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_16px_48px_rgba(34,211,238,0.30)] transition duration-200 hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_22px_60px_rgba(34,211,238,0.36)]"
+                type="button"
+              >
                 Generate Idea
               </button>
-              <button className="inline-flex items-center justify-center rounded-2xl border border-white/12 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(15,23,42,0.35)] backdrop-blur transition hover:bg-white/10">
+              <button
+                className="inline-flex items-center justify-center rounded-2xl border border-white/12 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(15,23,42,0.35)] backdrop-blur transition hover:bg-white/10"
+                type="button"
+              >
                 View Demo
               </button>
             </div>
@@ -61,7 +68,7 @@ export default function Home() {
           </div>
 
           <div className="relative mx-auto w-full max-w-xl">
-            <div className="absolute -inset-3 rounded-[2rem] bg-cyan-400/10 blur-2xl" />
+            <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-r from-cyan-400/14 via-indigo-400/10 to-sky-400/12 blur-3xl" />
 
             <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-[0_25px_80px_rgba(2,6,23,0.65)] backdrop-blur-xl sm:p-6">
               <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3">
@@ -106,6 +113,17 @@ export default function Home() {
                   <div className="flex items-center gap-2 text-xs text-emerald-300">
                     <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(74,222,128,0.8)]" />
                     Ready
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between rounded-2xl border border-cyan-400/10 bg-cyan-400/5 px-4 py-3">
+                  <span className="text-xs font-medium uppercase tracking-[0.18em] text-cyan-100/80">
+                    Generating insights
+                  </span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="h-2 w-2 rounded-full bg-cyan-300/90 animate-pulse" />
+                    <span className="h-2 w-2 rounded-full bg-cyan-300/65 animate-pulse" />
+                    <span className="h-2 w-2 rounded-full bg-cyan-300/40 animate-pulse" />
                   </div>
                 </div>
 
