@@ -13,6 +13,99 @@ const outputItems = [
   }
 ];
 
+const featureItems = [
+  {
+    description:
+      "Generate unique business ideas tailored to your interests in seconds.",
+    key: "idea",
+    title: "Instant Idea Generation"
+  },
+  {
+    description:
+      "Understand demand, competition, and potential before you build.",
+    key: "market",
+    title: "Market Insights"
+  },
+  {
+    description:
+      "Find profitable niches and opportunities you might have missed.",
+    key: "niche",
+    title: "Niche Discovery"
+  }
+] as const;
+
+type FeatureKey = (typeof featureItems)[number]["key"];
+
+function FeatureIcon({ kind }: { kind: FeatureKey }) {
+  if (kind === "idea") {
+    return (
+      <svg
+        aria-hidden="true"
+        className="h-5 w-5"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          className="stroke-current"
+          d="M13 2 6 13h5l-1 9 8-12h-5l0-8Z"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.8"
+        />
+      </svg>
+    );
+  }
+
+  if (kind === "market") {
+    return (
+      <svg
+        aria-hidden="true"
+        className="h-5 w-5"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          className="stroke-current"
+          d="M4 19h16M7 16V9m5 7V5m5 11v-4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.8"
+        />
+      </svg>
+    );
+  }
+
+  return (
+    <svg
+      aria-hidden="true"
+      className="h-5 w-5"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <circle
+        className="stroke-current"
+        cx="12"
+        cy="12"
+        r="7"
+        strokeWidth="1.8"
+      />
+      <circle
+        className="stroke-current"
+        cx="12"
+        cy="12"
+        r="3"
+        strokeWidth="1.8"
+      />
+      <path
+        className="stroke-current"
+        d="M12 2v2M12 20v2M2 12h2M20 12h2"
+        strokeLinecap="round"
+        strokeWidth="1.8"
+      />
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
     <main className="relative isolate overflow-hidden bg-slate-950">
@@ -159,6 +252,49 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative px-6 pb-24 pt-6 sm:px-8 lg:px-12 lg:pb-32">
+        <div className="absolute inset-x-0 top-10 -z-10 mx-auto h-56 max-w-3xl rounded-full bg-cyan-400/6 blur-3xl" />
+
+        <div className="mx-auto max-w-6xl">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-medium uppercase tracking-[0.24em] text-cyan-200/70">
+              Why IdeaForge AI
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              Everything you need to validate your next startup idea
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+              From idea generation to market insights &mdash; all in one place.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {featureItems.map((feature) => (
+              <article
+                key={feature.title}
+                className="group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-900/70 p-6 shadow-[0_18px_50px_rgba(2,6,23,0.34)] transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:border-cyan-400/30 hover:shadow-[0_24px_70px_rgba(8,145,178,0.16)]"
+              >
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(56,189,248,0.12),_transparent_36%)] opacity-0 transition duration-300 group-hover:opacity-100" />
+
+                <div className="relative">
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-400/15 bg-cyan-400/10 text-cyan-200 shadow-[0_0_28px_rgba(56,189,248,0.14)]">
+                    <FeatureIcon kind={feature.key} />
+                  </div>
+
+                  <h3 className="mt-6 text-xl font-semibold text-white">
+                    {feature.title}
+                  </h3>
+
+                  <p className="mt-4 text-sm leading-7 text-slate-300 sm:text-[15px]">
+                    {feature.description}
+                  </p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
