@@ -359,6 +359,37 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="relative px-6 pb-28 sm:px-8 lg:px-12 lg:pb-36">
+        <div className="mx-auto max-w-5xl">
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-slate-900/70 px-6 py-16 text-center shadow-[0_30px_90px_rgba(2,6,23,0.38)] sm:px-10 sm:py-20">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.14),_transparent_38%),radial-gradient(circle_at_80%_100%,_rgba(99,102,241,0.12),_transparent_30%)]" />
+
+            <div className="relative mx-auto max-w-2xl">
+              <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
+                Stop overthinking. Start building your next idea today.
+              </h2>
+
+              <p className="mx-auto mt-6 max-w-lg text-base leading-8 text-slate-300 sm:text-lg">
+                Generate your first startup idea in seconds.
+              </p>
+
+              <div className="mt-10 flex flex-col items-center gap-4">
+                <button
+                  className="inline-flex items-center justify-center rounded-2xl bg-cyan-400 px-8 py-4 text-base font-semibold text-slate-950 shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_18px_54px_rgba(34,211,238,0.34)] transition duration-200 hover:-translate-y-0.5 hover:bg-cyan-300 hover:shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_24px_64px_rgba(34,211,238,0.40)]"
+                  type="button"
+                >
+                  Generate Idea
+                </button>
+
+                <p className="text-sm font-medium text-slate-400">
+                  No signup required
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
