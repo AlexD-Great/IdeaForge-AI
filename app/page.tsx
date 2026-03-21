@@ -34,6 +34,24 @@ const featureItems = [
   }
 ] as const;
 
+const stepItems = [
+  {
+    description: "Tell the AI what you're curious about",
+    number: "01",
+    title: "Enter your interest"
+  },
+  {
+    description: "AI creates tailored startup ideas instantly",
+    number: "02",
+    title: "Generate ideas"
+  },
+  {
+    description: "Review insights and start building your product",
+    number: "03",
+    title: "Validate & build"
+  }
+] as const;
+
 type FeatureKey = (typeof featureItems)[number]["key"];
 
 function FeatureIcon({ kind }: { kind: FeatureKey }) {
@@ -291,6 +309,49 @@ export default function Home() {
 
                   <p className="mt-4 text-sm leading-7 text-slate-300 sm:text-[15px]">
                     {feature.description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative px-6 pb-24 sm:px-8 lg:px-12 lg:pb-32">
+        <div className="mx-auto max-w-6xl">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-sm font-medium uppercase tracking-[0.24em] text-cyan-200/70">
+              How it works
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              Get your startup idea in three simple steps
+            </h2>
+          </div>
+
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {stepItems.map((step) => (
+              <article
+                key={step.number}
+                className="group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-900/55 p-6 shadow-[0_18px_50px_rgba(2,6,23,0.26)] transition duration-300 hover:-translate-y-1 hover:border-white/15 hover:bg-slate-900/75 hover:shadow-[0_24px_60px_rgba(8,145,178,0.10)]"
+              >
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.10),_transparent_42%)] opacity-0 transition duration-300 group-hover:opacity-100" />
+
+                <div className="relative">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="inline-flex rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-slate-300">
+                      Step {step.number}
+                    </div>
+                    <span className="text-5xl font-semibold tracking-tight text-white/10 sm:text-6xl">
+                      {step.number}
+                    </span>
+                  </div>
+
+                  <h3 className="mt-10 text-xl font-semibold text-white">
+                    {step.title}
+                  </h3>
+
+                  <p className="mt-4 max-w-xs text-sm leading-7 text-slate-300 sm:text-[15px]">
+                    {step.description}
                   </p>
                 </div>
               </article>
